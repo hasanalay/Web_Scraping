@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<table>
+    {% for car in cars  %}
+    <tr>
+        <td>{{ car.year }}</td>
+        <td>{{ car.km }}</td>
+        <td>{{ car.color }}</td>
+        <td>{{ car.price }}</td>
+        <td>{{ car.location }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
