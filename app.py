@@ -32,15 +32,16 @@ def update_cars():
                                      'color': infos[2].text,
                                      'price': int(price[0].text.replace('.', '').replace('TL', '')),
                                      'location': location[0].text.replace('\n', ' ')})
-                time.sleep(3)
-                next_link = browser.find_elements(by=By.CSS_SELECTOR, value='.prevNextBut')
-                next_page = False if len(next_link) == 0 else True
-                for n in next_link:
-                    if n.get_attribute('title') == 'Sonraki':
-                        link = n.get_attribute('href')
-                        next_page = True
-                    else:
-                        next_page = False
+            time.sleep(3)
+            next_link = browser.find_elements(by=By.CSS_SELECTOR, value='.prevNextBut')
+            next_page = False if len(next_link) == 0 else True
+            for n in next_link:
+                if n.get_attribute('title') == 'Sonraki':
+                    link = n.get_attribute('href')
+                    next_page = True
+                else:
+                    next_page = False
+
         browser.close()
 
         with open('cars.csv', 'w', newline='') as f:
