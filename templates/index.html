@@ -5,8 +5,15 @@
     <title>{{ title }}</title>
 </head>
 <body>
-
+<img src="image.jpg">
 <table>
+    <tr>
+        <th>Year</th>
+        <th>KM</th>
+        <th>Color</th>
+        <th>Price</th>
+        <th>Location</th>
+    </tr>
     {% for car in cars  %}
     <tr>
         <td>{{ car.year }}</td>
